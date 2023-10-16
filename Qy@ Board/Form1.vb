@@ -81,7 +81,6 @@ Public Class Form1
     Private Sub ComPortList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComPortListBox.SelectedIndexChanged
         Try
             SerialPort1.Close()                             'Try to close port before change
-
         Catch ex As Exception
 
         End Try
@@ -109,7 +108,7 @@ Public Class Form1
         PortDataListBox.Items.Add("Parity = " & SerialPort1.Parity)
 
 
-        'added 10.5 
+
         'updates output listbox
         Dim inPut1, inPut2, inPut3, inPut4, inPut5, inPut6, inPut7, inPut8 As Integer
 
@@ -177,9 +176,62 @@ Public Class Form1
 
         End If
 
+        'Display D Out in checkbox
+        If TXdata(1) = 1 Then
+            ' x = 1
+            DO1CheckBox.Checked = True
+        Else
+            DO1CheckBox.Checked = False
+        End If
 
+        If TXdata(1) = 2 Then
+            ' x = 1
+            DO2CheckBox.Checked = True
+        Else
+            DO2CheckBox.Checked = False
+        End If
 
+        If TXdata(1) = 4 Then
+            ' x = 1
+            DO3CheckBox.Checked = True
+        Else
+            DO3CheckBox.Checked = False
+        End If
 
+        If TXdata(1) = 8 Then
+            ' x = 1
+            DO4CheckBox.Checked = True
+        Else
+            DO4CheckBox.Checked = False
+        End If
+
+        If TXdata(1) = 16 Then
+            ' x = 1
+            DO5CheckBox.Checked = True
+        Else
+            DO5CheckBox.Checked = False
+        End If
+
+        If TXdata(1) = 32 Then
+            ' x = 1
+            DO6CheckBox.Checked = True
+        Else
+            DO6CheckBox.Checked = False
+        End If
+
+        If TXdata(1) = 64 Then
+            ' x = 1
+            DO7CheckBox.Checked = True
+        Else
+            DO7CheckBox.Checked = False
+        End If
+
+        If TXdata(1) = 128 Then
+            ' x = 1
+            DO8CheckBox.Checked = True
+        Else
+            DO8CheckBox.Checked = False
+        End If
     End Sub
 
 
@@ -285,6 +337,15 @@ Public Class Form1
         TXdata(1) = 1
         TXdata(2) = 0
         SendData()
+        'DO1CheckBox.Checked = True
+        ' Dim x As Integer
+        'If TXdata(1) >= 1 Then
+        '    x = 1
+        '    DO1CheckBox.Checked = True
+
+
+        'End If
+
     End Sub
 
     Private Sub DOut2Button_Click(sender As Object, e As EventArgs) Handles DOut2Button.Click

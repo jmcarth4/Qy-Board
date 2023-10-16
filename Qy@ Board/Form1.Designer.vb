@@ -33,6 +33,24 @@ Partial Class Form1
         Me.BaudRateButton = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.DInGroupBox = New System.Windows.Forms.GroupBox()
+        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox10 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox11 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox12 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox13 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox14 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox15 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox16 = New System.Windows.Forms.CheckBox()
+        Me.DOutGroupBox = New System.Windows.Forms.GroupBox()
+        Me.DO5CheckBox = New System.Windows.Forms.CheckBox()
+        Me.DO6CheckBox = New System.Windows.Forms.CheckBox()
+        Me.DO7CheckBox = New System.Windows.Forms.CheckBox()
+        Me.DO8CheckBox = New System.Windows.Forms.CheckBox()
+        Me.DO4CheckBox = New System.Windows.Forms.CheckBox()
+        Me.DO3CheckBox = New System.Windows.Forms.CheckBox()
+        Me.DO2CheckBox = New System.Windows.Forms.CheckBox()
+        Me.DO1CheckBox = New System.Windows.Forms.CheckBox()
         Me.DA4Label = New System.Windows.Forms.Label()
         Me.DA3Label = New System.Windows.Forms.Label()
         Me.DA2Label = New System.Windows.Forms.Label()
@@ -81,30 +99,12 @@ Partial Class Form1
         Me.QuitButton = New System.Windows.Forms.Button()
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.DOutGroupBox = New System.Windows.Forms.GroupBox()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
-        Me.DInGroupBox = New System.Windows.Forms.GroupBox()
-        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox10 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox11 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox12 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox13 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox14 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox15 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox16 = New System.Windows.Forms.CheckBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.DOutGroupBox.SuspendLayout()
         Me.DInGroupBox.SuspendLayout()
+        Me.DOutGroupBox.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -129,7 +129,7 @@ Partial Class Form1
         Me.TabPage1.Location = New System.Drawing.Point(4, 29)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(868, 506)
+        Me.TabPage1.Size = New System.Drawing.Size(1014, 558)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Connect to Serial Port"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -193,7 +193,7 @@ Partial Class Form1
         Me.TabPage2.Location = New System.Drawing.Point(4, 29)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(868, 506)
+        Me.TabPage2.Size = New System.Drawing.Size(1014, 558)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Qy@ Board"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -254,6 +254,192 @@ Partial Class Form1
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Testing"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'DInGroupBox
+        '
+        Me.DInGroupBox.Controls.Add(Me.CheckBox9)
+        Me.DInGroupBox.Controls.Add(Me.CheckBox10)
+        Me.DInGroupBox.Controls.Add(Me.CheckBox11)
+        Me.DInGroupBox.Controls.Add(Me.CheckBox12)
+        Me.DInGroupBox.Controls.Add(Me.CheckBox13)
+        Me.DInGroupBox.Controls.Add(Me.CheckBox14)
+        Me.DInGroupBox.Controls.Add(Me.CheckBox15)
+        Me.DInGroupBox.Controls.Add(Me.CheckBox16)
+        Me.DInGroupBox.Location = New System.Drawing.Point(787, 281)
+        Me.DInGroupBox.Name = "DInGroupBox"
+        Me.DInGroupBox.Size = New System.Drawing.Size(138, 281)
+        Me.DInGroupBox.TabIndex = 63
+        Me.DInGroupBox.TabStop = False
+        Me.DInGroupBox.Text = "D Inputs"
+        '
+        'CheckBox9
+        '
+        Me.CheckBox9.AutoSize = True
+        Me.CheckBox9.Location = New System.Drawing.Point(18, 148)
+        Me.CheckBox9.Name = "CheckBox9"
+        Me.CheckBox9.Size = New System.Drawing.Size(116, 24)
+        Me.CheckBox9.TabIndex = 62
+        Me.CheckBox9.Text = "CheckBox9"
+        Me.CheckBox9.UseVisualStyleBackColor = True
+        '
+        'CheckBox10
+        '
+        Me.CheckBox10.AutoSize = True
+        Me.CheckBox10.Location = New System.Drawing.Point(18, 178)
+        Me.CheckBox10.Name = "CheckBox10"
+        Me.CheckBox10.Size = New System.Drawing.Size(125, 24)
+        Me.CheckBox10.TabIndex = 61
+        Me.CheckBox10.Text = "CheckBox10"
+        Me.CheckBox10.UseVisualStyleBackColor = True
+        '
+        'CheckBox11
+        '
+        Me.CheckBox11.AutoSize = True
+        Me.CheckBox11.Location = New System.Drawing.Point(18, 208)
+        Me.CheckBox11.Name = "CheckBox11"
+        Me.CheckBox11.Size = New System.Drawing.Size(125, 24)
+        Me.CheckBox11.TabIndex = 60
+        Me.CheckBox11.Text = "CheckBox11"
+        Me.CheckBox11.UseVisualStyleBackColor = True
+        '
+        'CheckBox12
+        '
+        Me.CheckBox12.AutoSize = True
+        Me.CheckBox12.Location = New System.Drawing.Point(18, 238)
+        Me.CheckBox12.Name = "CheckBox12"
+        Me.CheckBox12.Size = New System.Drawing.Size(125, 24)
+        Me.CheckBox12.TabIndex = 59
+        Me.CheckBox12.Text = "CheckBox12"
+        Me.CheckBox12.UseVisualStyleBackColor = True
+        '
+        'CheckBox13
+        '
+        Me.CheckBox13.AutoSize = True
+        Me.CheckBox13.Location = New System.Drawing.Point(18, 118)
+        Me.CheckBox13.Name = "CheckBox13"
+        Me.CheckBox13.Size = New System.Drawing.Size(125, 24)
+        Me.CheckBox13.TabIndex = 58
+        Me.CheckBox13.Text = "CheckBox13"
+        Me.CheckBox13.UseVisualStyleBackColor = True
+        '
+        'CheckBox14
+        '
+        Me.CheckBox14.AutoSize = True
+        Me.CheckBox14.Location = New System.Drawing.Point(18, 94)
+        Me.CheckBox14.Name = "CheckBox14"
+        Me.CheckBox14.Size = New System.Drawing.Size(125, 24)
+        Me.CheckBox14.TabIndex = 57
+        Me.CheckBox14.Text = "CheckBox14"
+        Me.CheckBox14.UseVisualStyleBackColor = True
+        '
+        'CheckBox15
+        '
+        Me.CheckBox15.AutoSize = True
+        Me.CheckBox15.Location = New System.Drawing.Point(18, 69)
+        Me.CheckBox15.Name = "CheckBox15"
+        Me.CheckBox15.Size = New System.Drawing.Size(125, 24)
+        Me.CheckBox15.TabIndex = 56
+        Me.CheckBox15.Text = "CheckBox15"
+        Me.CheckBox15.UseVisualStyleBackColor = True
+        '
+        'CheckBox16
+        '
+        Me.CheckBox16.AutoSize = True
+        Me.CheckBox16.Location = New System.Drawing.Point(18, 43)
+        Me.CheckBox16.Name = "CheckBox16"
+        Me.CheckBox16.Size = New System.Drawing.Size(125, 24)
+        Me.CheckBox16.TabIndex = 55
+        Me.CheckBox16.Text = "CheckBox16"
+        Me.CheckBox16.UseVisualStyleBackColor = True
+        '
+        'DOutGroupBox
+        '
+        Me.DOutGroupBox.Controls.Add(Me.DO5CheckBox)
+        Me.DOutGroupBox.Controls.Add(Me.DO6CheckBox)
+        Me.DOutGroupBox.Controls.Add(Me.DO7CheckBox)
+        Me.DOutGroupBox.Controls.Add(Me.DO8CheckBox)
+        Me.DOutGroupBox.Controls.Add(Me.DO4CheckBox)
+        Me.DOutGroupBox.Controls.Add(Me.DO3CheckBox)
+        Me.DOutGroupBox.Controls.Add(Me.DO2CheckBox)
+        Me.DOutGroupBox.Controls.Add(Me.DO1CheckBox)
+        Me.DOutGroupBox.Location = New System.Drawing.Point(858, 3)
+        Me.DOutGroupBox.Name = "DOutGroupBox"
+        Me.DOutGroupBox.Size = New System.Drawing.Size(100, 272)
+        Me.DOutGroupBox.TabIndex = 54
+        Me.DOutGroupBox.TabStop = False
+        Me.DOutGroupBox.Text = "D Outputs"
+        '
+        'DO5CheckBox
+        '
+        Me.DO5CheckBox.AutoSize = True
+        Me.DO5CheckBox.Location = New System.Drawing.Point(18, 148)
+        Me.DO5CheckBox.Name = "DO5CheckBox"
+        Me.DO5CheckBox.Size = New System.Drawing.Size(22, 21)
+        Me.DO5CheckBox.TabIndex = 62
+        Me.DO5CheckBox.UseVisualStyleBackColor = True
+        '
+        'DO6CheckBox
+        '
+        Me.DO6CheckBox.AutoSize = True
+        Me.DO6CheckBox.Location = New System.Drawing.Point(18, 178)
+        Me.DO6CheckBox.Name = "DO6CheckBox"
+        Me.DO6CheckBox.Size = New System.Drawing.Size(22, 21)
+        Me.DO6CheckBox.TabIndex = 61
+        Me.DO6CheckBox.UseVisualStyleBackColor = True
+        '
+        'DO7CheckBox
+        '
+        Me.DO7CheckBox.AutoSize = True
+        Me.DO7CheckBox.Location = New System.Drawing.Point(18, 208)
+        Me.DO7CheckBox.Name = "DO7CheckBox"
+        Me.DO7CheckBox.Size = New System.Drawing.Size(22, 21)
+        Me.DO7CheckBox.TabIndex = 60
+        Me.DO7CheckBox.UseVisualStyleBackColor = True
+        '
+        'DO8CheckBox
+        '
+        Me.DO8CheckBox.AutoSize = True
+        Me.DO8CheckBox.Location = New System.Drawing.Point(18, 238)
+        Me.DO8CheckBox.Name = "DO8CheckBox"
+        Me.DO8CheckBox.Size = New System.Drawing.Size(22, 21)
+        Me.DO8CheckBox.TabIndex = 59
+        Me.DO8CheckBox.UseVisualStyleBackColor = True
+        '
+        'DO4CheckBox
+        '
+        Me.DO4CheckBox.AutoSize = True
+        Me.DO4CheckBox.Location = New System.Drawing.Point(18, 118)
+        Me.DO4CheckBox.Name = "DO4CheckBox"
+        Me.DO4CheckBox.Size = New System.Drawing.Size(22, 21)
+        Me.DO4CheckBox.TabIndex = 58
+        Me.DO4CheckBox.UseVisualStyleBackColor = True
+        '
+        'DO3CheckBox
+        '
+        Me.DO3CheckBox.AutoSize = True
+        Me.DO3CheckBox.Location = New System.Drawing.Point(18, 94)
+        Me.DO3CheckBox.Name = "DO3CheckBox"
+        Me.DO3CheckBox.Size = New System.Drawing.Size(22, 21)
+        Me.DO3CheckBox.TabIndex = 57
+        Me.DO3CheckBox.UseVisualStyleBackColor = True
+        '
+        'DO2CheckBox
+        '
+        Me.DO2CheckBox.AutoSize = True
+        Me.DO2CheckBox.Location = New System.Drawing.Point(18, 69)
+        Me.DO2CheckBox.Name = "DO2CheckBox"
+        Me.DO2CheckBox.Size = New System.Drawing.Size(22, 21)
+        Me.DO2CheckBox.TabIndex = 56
+        Me.DO2CheckBox.UseVisualStyleBackColor = True
+        '
+        'DO1CheckBox
+        '
+        Me.DO1CheckBox.AutoSize = True
+        Me.DO1CheckBox.Location = New System.Drawing.Point(18, 43)
+        Me.DO1CheckBox.Name = "DO1CheckBox"
+        Me.DO1CheckBox.Size = New System.Drawing.Size(22, 21)
+        Me.DO1CheckBox.TabIndex = 55
+        Me.DO1CheckBox.UseVisualStyleBackColor = True
         '
         'DA4Label
         '
@@ -675,200 +861,6 @@ Partial Class Form1
         '
         Me.Timer1.Enabled = True
         '
-        'DOutGroupBox
-        '
-        Me.DOutGroupBox.Controls.Add(Me.CheckBox5)
-        Me.DOutGroupBox.Controls.Add(Me.CheckBox6)
-        Me.DOutGroupBox.Controls.Add(Me.CheckBox7)
-        Me.DOutGroupBox.Controls.Add(Me.CheckBox8)
-        Me.DOutGroupBox.Controls.Add(Me.CheckBox4)
-        Me.DOutGroupBox.Controls.Add(Me.CheckBox3)
-        Me.DOutGroupBox.Controls.Add(Me.CheckBox2)
-        Me.DOutGroupBox.Controls.Add(Me.CheckBox1)
-        Me.DOutGroupBox.Location = New System.Drawing.Point(858, 3)
-        Me.DOutGroupBox.Name = "DOutGroupBox"
-        Me.DOutGroupBox.Size = New System.Drawing.Size(138, 272)
-        Me.DOutGroupBox.TabIndex = 54
-        Me.DOutGroupBox.TabStop = False
-        Me.DOutGroupBox.Text = "D Outputs"
-        '
-        'CheckBox4
-        '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(18, 118)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(116, 24)
-        Me.CheckBox4.TabIndex = 58
-        Me.CheckBox4.Text = "CheckBox4"
-        Me.CheckBox4.UseVisualStyleBackColor = True
-        '
-        'CheckBox3
-        '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(18, 94)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(116, 24)
-        Me.CheckBox3.TabIndex = 57
-        Me.CheckBox3.Text = "CheckBox3"
-        Me.CheckBox3.UseVisualStyleBackColor = True
-        '
-        'CheckBox2
-        '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(18, 69)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(116, 24)
-        Me.CheckBox2.TabIndex = 56
-        Me.CheckBox2.Text = "CheckBox2"
-        Me.CheckBox2.UseVisualStyleBackColor = True
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(18, 43)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(116, 24)
-        Me.CheckBox1.TabIndex = 55
-        Me.CheckBox1.Text = "CheckBox1"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'CheckBox5
-        '
-        Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.Location = New System.Drawing.Point(18, 148)
-        Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(116, 24)
-        Me.CheckBox5.TabIndex = 62
-        Me.CheckBox5.Text = "CheckBox5"
-        Me.CheckBox5.UseVisualStyleBackColor = True
-        '
-        'CheckBox6
-        '
-        Me.CheckBox6.AutoSize = True
-        Me.CheckBox6.Location = New System.Drawing.Point(18, 178)
-        Me.CheckBox6.Name = "CheckBox6"
-        Me.CheckBox6.Size = New System.Drawing.Size(116, 24)
-        Me.CheckBox6.TabIndex = 61
-        Me.CheckBox6.Text = "CheckBox6"
-        Me.CheckBox6.UseVisualStyleBackColor = True
-        '
-        'CheckBox7
-        '
-        Me.CheckBox7.AutoSize = True
-        Me.CheckBox7.Location = New System.Drawing.Point(18, 208)
-        Me.CheckBox7.Name = "CheckBox7"
-        Me.CheckBox7.Size = New System.Drawing.Size(116, 24)
-        Me.CheckBox7.TabIndex = 60
-        Me.CheckBox7.Text = "CheckBox7"
-        Me.CheckBox7.UseVisualStyleBackColor = True
-        '
-        'CheckBox8
-        '
-        Me.CheckBox8.AutoSize = True
-        Me.CheckBox8.Location = New System.Drawing.Point(18, 238)
-        Me.CheckBox8.Name = "CheckBox8"
-        Me.CheckBox8.Size = New System.Drawing.Size(116, 24)
-        Me.CheckBox8.TabIndex = 59
-        Me.CheckBox8.Text = "CheckBox8"
-        Me.CheckBox8.UseVisualStyleBackColor = True
-        '
-        'DInGroupBox
-        '
-        Me.DInGroupBox.Controls.Add(Me.CheckBox9)
-        Me.DInGroupBox.Controls.Add(Me.CheckBox10)
-        Me.DInGroupBox.Controls.Add(Me.CheckBox11)
-        Me.DInGroupBox.Controls.Add(Me.CheckBox12)
-        Me.DInGroupBox.Controls.Add(Me.CheckBox13)
-        Me.DInGroupBox.Controls.Add(Me.CheckBox14)
-        Me.DInGroupBox.Controls.Add(Me.CheckBox15)
-        Me.DInGroupBox.Controls.Add(Me.CheckBox16)
-        Me.DInGroupBox.Location = New System.Drawing.Point(787, 281)
-        Me.DInGroupBox.Name = "DInGroupBox"
-        Me.DInGroupBox.Size = New System.Drawing.Size(138, 281)
-        Me.DInGroupBox.TabIndex = 63
-        Me.DInGroupBox.TabStop = False
-        Me.DInGroupBox.Text = "D Inputs"
-        '
-        'CheckBox9
-        '
-        Me.CheckBox9.AutoSize = True
-        Me.CheckBox9.Location = New System.Drawing.Point(18, 148)
-        Me.CheckBox9.Name = "CheckBox9"
-        Me.CheckBox9.Size = New System.Drawing.Size(116, 24)
-        Me.CheckBox9.TabIndex = 62
-        Me.CheckBox9.Text = "CheckBox9"
-        Me.CheckBox9.UseVisualStyleBackColor = True
-        '
-        'CheckBox10
-        '
-        Me.CheckBox10.AutoSize = True
-        Me.CheckBox10.Location = New System.Drawing.Point(18, 178)
-        Me.CheckBox10.Name = "CheckBox10"
-        Me.CheckBox10.Size = New System.Drawing.Size(125, 24)
-        Me.CheckBox10.TabIndex = 61
-        Me.CheckBox10.Text = "CheckBox10"
-        Me.CheckBox10.UseVisualStyleBackColor = True
-        '
-        'CheckBox11
-        '
-        Me.CheckBox11.AutoSize = True
-        Me.CheckBox11.Location = New System.Drawing.Point(18, 208)
-        Me.CheckBox11.Name = "CheckBox11"
-        Me.CheckBox11.Size = New System.Drawing.Size(125, 24)
-        Me.CheckBox11.TabIndex = 60
-        Me.CheckBox11.Text = "CheckBox11"
-        Me.CheckBox11.UseVisualStyleBackColor = True
-        '
-        'CheckBox12
-        '
-        Me.CheckBox12.AutoSize = True
-        Me.CheckBox12.Location = New System.Drawing.Point(18, 238)
-        Me.CheckBox12.Name = "CheckBox12"
-        Me.CheckBox12.Size = New System.Drawing.Size(125, 24)
-        Me.CheckBox12.TabIndex = 59
-        Me.CheckBox12.Text = "CheckBox12"
-        Me.CheckBox12.UseVisualStyleBackColor = True
-        '
-        'CheckBox13
-        '
-        Me.CheckBox13.AutoSize = True
-        Me.CheckBox13.Location = New System.Drawing.Point(18, 118)
-        Me.CheckBox13.Name = "CheckBox13"
-        Me.CheckBox13.Size = New System.Drawing.Size(125, 24)
-        Me.CheckBox13.TabIndex = 58
-        Me.CheckBox13.Text = "CheckBox13"
-        Me.CheckBox13.UseVisualStyleBackColor = True
-        '
-        'CheckBox14
-        '
-        Me.CheckBox14.AutoSize = True
-        Me.CheckBox14.Location = New System.Drawing.Point(18, 94)
-        Me.CheckBox14.Name = "CheckBox14"
-        Me.CheckBox14.Size = New System.Drawing.Size(125, 24)
-        Me.CheckBox14.TabIndex = 57
-        Me.CheckBox14.Text = "CheckBox14"
-        Me.CheckBox14.UseVisualStyleBackColor = True
-        '
-        'CheckBox15
-        '
-        Me.CheckBox15.AutoSize = True
-        Me.CheckBox15.Location = New System.Drawing.Point(18, 69)
-        Me.CheckBox15.Name = "CheckBox15"
-        Me.CheckBox15.Size = New System.Drawing.Size(125, 24)
-        Me.CheckBox15.TabIndex = 56
-        Me.CheckBox15.Text = "CheckBox15"
-        Me.CheckBox15.UseVisualStyleBackColor = True
-        '
-        'CheckBox16
-        '
-        Me.CheckBox16.AutoSize = True
-        Me.CheckBox16.Location = New System.Drawing.Point(18, 43)
-        Me.CheckBox16.Name = "CheckBox16"
-        Me.CheckBox16.Size = New System.Drawing.Size(125, 24)
-        Me.CheckBox16.TabIndex = 55
-        Me.CheckBox16.Text = "CheckBox16"
-        Me.CheckBox16.UseVisualStyleBackColor = True
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -882,11 +874,11 @@ Partial Class Form1
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.DOutGroupBox.ResumeLayout(False)
-        Me.DOutGroupBox.PerformLayout()
         Me.DInGroupBox.ResumeLayout(False)
         Me.DInGroupBox.PerformLayout()
+        Me.DOutGroupBox.ResumeLayout(False)
+        Me.DOutGroupBox.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -950,14 +942,14 @@ Partial Class Form1
     Friend WithEvents DA2Label As Label
     Friend WithEvents DA1Label As Label
     Friend WithEvents DOutGroupBox As GroupBox
-    Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents CheckBox4 As CheckBox
-    Friend WithEvents CheckBox3 As CheckBox
-    Friend WithEvents CheckBox2 As CheckBox
-    Friend WithEvents CheckBox5 As CheckBox
-    Friend WithEvents CheckBox6 As CheckBox
-    Friend WithEvents CheckBox7 As CheckBox
-    Friend WithEvents CheckBox8 As CheckBox
+    Friend WithEvents DO1CheckBox As CheckBox
+    Friend WithEvents DO4CheckBox As CheckBox
+    Friend WithEvents DO3CheckBox As CheckBox
+    Friend WithEvents DO2CheckBox As CheckBox
+    Friend WithEvents DO5CheckBox As CheckBox
+    Friend WithEvents DO6CheckBox As CheckBox
+    Friend WithEvents DO7CheckBox As CheckBox
+    Friend WithEvents DO8CheckBox As CheckBox
     Friend WithEvents DInGroupBox As GroupBox
     Friend WithEvents CheckBox9 As CheckBox
     Friend WithEvents CheckBox10 As CheckBox
