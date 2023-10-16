@@ -33,28 +33,9 @@ Partial Class Form1
         Me.BaudRateButton = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.QuitButton = New System.Windows.Forms.Button()
-        Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.DOut8Button = New System.Windows.Forms.Button()
-        Me.DOut7Button = New System.Windows.Forms.Button()
-        Me.DOut6Button = New System.Windows.Forms.Button()
-        Me.DOut5Button = New System.Windows.Forms.Button()
-        Me.DOut4Button = New System.Windows.Forms.Button()
-        Me.DOut3Button = New System.Windows.Forms.Button()
-        Me.DOut2Button = New System.Windows.Forms.Button()
-        Me.DIn1Label = New System.Windows.Forms.Label()
-        Me.AnOut4Button = New System.Windows.Forms.Button()
-        Me.AnOut3Button = New System.Windows.Forms.Button()
-        Me.AnOut2Button = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.DOut1Button = New System.Windows.Forms.Button()
-        Me.DIn1Button = New System.Windows.Forms.Button()
-        Me.AnOut1Button = New System.Windows.Forms.Button()
-        Me.Analog4Button = New System.Windows.Forms.Button()
-        Me.Analog3Button = New System.Windows.Forms.Button()
-        Me.Analog2Button = New System.Windows.Forms.Button()
-        Me.Analog1Button = New System.Windows.Forms.Button()
+        Me.Clear5Button = New System.Windows.Forms.Button()
+        Me.Clear4Button = New System.Windows.Forms.Button()
+        Me.RXLabel = New System.Windows.Forms.Label()
         Me.TXLabel = New System.Windows.Forms.Label()
         Me.Clear3Button = New System.Windows.Forms.Button()
         Me.Clear1Button = New System.Windows.Forms.Button()
@@ -64,9 +45,26 @@ Partial Class Form1
         Me.Clear2Button = New System.Windows.Forms.Button()
         Me.RXAscLabel = New System.Windows.Forms.Label()
         Me.RXDecLabel = New System.Windows.Forms.Label()
-        Me.Clear5Button = New System.Windows.Forms.Button()
-        Me.Clear4Button = New System.Windows.Forms.Button()
-        Me.RXLabel = New System.Windows.Forms.Label()
+        Me.DOut8Button = New System.Windows.Forms.Button()
+        Me.DOut7Button = New System.Windows.Forms.Button()
+        Me.DOut6Button = New System.Windows.Forms.Button()
+        Me.DOut5Button = New System.Windows.Forms.Button()
+        Me.DOut4Button = New System.Windows.Forms.Button()
+        Me.DOut3Button = New System.Windows.Forms.Button()
+        Me.DOut2Button = New System.Windows.Forms.Button()
+        Me.DIn1Label = New System.Windows.Forms.Label()
+        Me.AnOut2Button = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.DOut1Button = New System.Windows.Forms.Button()
+        Me.DIn1Button = New System.Windows.Forms.Button()
+        Me.AnOut1Button = New System.Windows.Forms.Button()
+        Me.Analog4Button = New System.Windows.Forms.Button()
+        Me.Analog3Button = New System.Windows.Forms.Button()
+        Me.Analog2Button = New System.Windows.Forms.Button()
+        Me.Analog1Button = New System.Windows.Forms.Button()
+        Me.QuitButton = New System.Windows.Forms.Button()
+        Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
@@ -186,8 +184,6 @@ Partial Class Form1
         Me.TabPage3.Controls.Add(Me.DOut3Button)
         Me.TabPage3.Controls.Add(Me.DOut2Button)
         Me.TabPage3.Controls.Add(Me.DIn1Label)
-        Me.TabPage3.Controls.Add(Me.AnOut4Button)
-        Me.TabPage3.Controls.Add(Me.AnOut3Button)
         Me.TabPage3.Controls.Add(Me.AnOut2Button)
         Me.TabPage3.Controls.Add(Me.PictureBox1)
         Me.TabPage3.Controls.Add(Me.DOut1Button)
@@ -205,193 +201,32 @@ Partial Class Form1
         Me.TabPage3.Text = "Testing"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'QuitButton
+        'Clear5Button
         '
-        Me.QuitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.QuitButton.Location = New System.Drawing.Point(918, 559)
-        Me.QuitButton.Name = "QuitButton"
-        Me.QuitButton.Size = New System.Drawing.Size(82, 76)
-        Me.QuitButton.TabIndex = 53
-        Me.QuitButton.Text = "Quit"
-        Me.QuitButton.UseVisualStyleBackColor = True
+        Me.Clear5Button.Location = New System.Drawing.Point(733, 186)
+        Me.Clear5Button.Name = "Clear5Button"
+        Me.Clear5Button.Size = New System.Drawing.Size(116, 62)
+        Me.Clear5Button.TabIndex = 177
+        Me.Clear5Button.Text = "Clear All "
+        Me.Clear5Button.UseVisualStyleBackColor = True
         '
-        'SerialPort1
+        'Clear4Button
         '
+        Me.Clear4Button.Location = New System.Drawing.Point(198, 186)
+        Me.Clear4Button.Name = "Clear4Button"
+        Me.Clear4Button.Size = New System.Drawing.Size(116, 62)
+        Me.Clear4Button.TabIndex = 176
+        Me.Clear4Button.Text = "Clear RX "
+        Me.Clear4Button.UseVisualStyleBackColor = True
         '
-        'Timer1
+        'RXLabel
         '
-        Me.Timer1.Enabled = True
-        '
-        'DOut8Button
-        '
-        Me.DOut8Button.Location = New System.Drawing.Point(642, 437)
-        Me.DOut8Button.Name = "DOut8Button"
-        Me.DOut8Button.Size = New System.Drawing.Size(139, 49)
-        Me.DOut8Button.TabIndex = 165
-        Me.DOut8Button.Text = "Digital Output 8"
-        Me.DOut8Button.UseVisualStyleBackColor = True
-        '
-        'DOut7Button
-        '
-        Me.DOut7Button.Location = New System.Drawing.Point(642, 382)
-        Me.DOut7Button.Name = "DOut7Button"
-        Me.DOut7Button.Size = New System.Drawing.Size(139, 49)
-        Me.DOut7Button.TabIndex = 164
-        Me.DOut7Button.Text = "Digital Output 7"
-        Me.DOut7Button.UseVisualStyleBackColor = True
-        '
-        'DOut6Button
-        '
-        Me.DOut6Button.Location = New System.Drawing.Point(642, 325)
-        Me.DOut6Button.Name = "DOut6Button"
-        Me.DOut6Button.Size = New System.Drawing.Size(139, 49)
-        Me.DOut6Button.TabIndex = 163
-        Me.DOut6Button.Text = "Digital Output 6"
-        Me.DOut6Button.UseVisualStyleBackColor = True
-        '
-        'DOut5Button
-        '
-        Me.DOut5Button.Location = New System.Drawing.Point(642, 266)
-        Me.DOut5Button.Name = "DOut5Button"
-        Me.DOut5Button.Size = New System.Drawing.Size(139, 49)
-        Me.DOut5Button.TabIndex = 162
-        Me.DOut5Button.Text = "Digital Output 5"
-        Me.DOut5Button.UseVisualStyleBackColor = True
-        '
-        'DOut4Button
-        '
-        Me.DOut4Button.Location = New System.Drawing.Point(487, 437)
-        Me.DOut4Button.Name = "DOut4Button"
-        Me.DOut4Button.Size = New System.Drawing.Size(139, 49)
-        Me.DOut4Button.TabIndex = 161
-        Me.DOut4Button.Text = "Digital Output 4"
-        Me.DOut4Button.UseVisualStyleBackColor = True
-        '
-        'DOut3Button
-        '
-        Me.DOut3Button.Location = New System.Drawing.Point(487, 382)
-        Me.DOut3Button.Name = "DOut3Button"
-        Me.DOut3Button.Size = New System.Drawing.Size(139, 49)
-        Me.DOut3Button.TabIndex = 160
-        Me.DOut3Button.Text = "Digital Output 3"
-        Me.DOut3Button.UseVisualStyleBackColor = True
-        '
-        'DOut2Button
-        '
-        Me.DOut2Button.Location = New System.Drawing.Point(487, 325)
-        Me.DOut2Button.Name = "DOut2Button"
-        Me.DOut2Button.Size = New System.Drawing.Size(139, 49)
-        Me.DOut2Button.TabIndex = 159
-        Me.DOut2Button.Text = "Digital Output 2"
-        Me.DOut2Button.UseVisualStyleBackColor = True
-        '
-        'DIn1Label
-        '
-        Me.DIn1Label.AutoSize = True
-        Me.DIn1Label.Location = New System.Drawing.Point(343, 391)
-        Me.DIn1Label.Name = "DIn1Label"
-        Me.DIn1Label.Size = New System.Drawing.Size(105, 20)
-        Me.DIn1Label.TabIndex = 158
-        Me.DIn1Label.Text = "Digital input 1"
-        '
-        'AnOut4Button
-        '
-        Me.AnOut4Button.Location = New System.Drawing.Point(175, 445)
-        Me.AnOut4Button.Name = "AnOut4Button"
-        Me.AnOut4Button.Size = New System.Drawing.Size(139, 49)
-        Me.AnOut4Button.TabIndex = 157
-        Me.AnOut4Button.Text = "Analog Output 4"
-        Me.AnOut4Button.UseVisualStyleBackColor = True
-        '
-        'AnOut3Button
-        '
-        Me.AnOut3Button.Location = New System.Drawing.Point(175, 382)
-        Me.AnOut3Button.Name = "AnOut3Button"
-        Me.AnOut3Button.Size = New System.Drawing.Size(139, 49)
-        Me.AnOut3Button.TabIndex = 156
-        Me.AnOut3Button.Text = "Analog Output 3"
-        Me.AnOut3Button.UseVisualStyleBackColor = True
-        '
-        'AnOut2Button
-        '
-        Me.AnOut2Button.Location = New System.Drawing.Point(175, 327)
-        Me.AnOut2Button.Name = "AnOut2Button"
-        Me.AnOut2Button.Size = New System.Drawing.Size(139, 49)
-        Me.AnOut2Button.TabIndex = 155
-        Me.AnOut2Button.Text = "Analog Output 2"
-        Me.AnOut2Button.UseVisualStyleBackColor = True
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Black
-        Me.PictureBox1.Location = New System.Drawing.Point(347, 327)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 50)
-        Me.PictureBox1.TabIndex = 154
-        Me.PictureBox1.TabStop = False
-        '
-        'DOut1Button
-        '
-        Me.DOut1Button.Location = New System.Drawing.Point(487, 266)
-        Me.DOut1Button.Name = "DOut1Button"
-        Me.DOut1Button.Size = New System.Drawing.Size(139, 49)
-        Me.DOut1Button.TabIndex = 153
-        Me.DOut1Button.Text = "Digital Output 1"
-        Me.DOut1Button.UseVisualStyleBackColor = True
-        '
-        'DIn1Button
-        '
-        Me.DIn1Button.Location = New System.Drawing.Point(331, 266)
-        Me.DIn1Button.Name = "DIn1Button"
-        Me.DIn1Button.Size = New System.Drawing.Size(139, 49)
-        Me.DIn1Button.TabIndex = 152
-        Me.DIn1Button.Text = "Digital Inputs"
-        Me.DIn1Button.UseVisualStyleBackColor = True
-        '
-        'AnOut1Button
-        '
-        Me.AnOut1Button.Location = New System.Drawing.Point(175, 266)
-        Me.AnOut1Button.Name = "AnOut1Button"
-        Me.AnOut1Button.Size = New System.Drawing.Size(139, 49)
-        Me.AnOut1Button.TabIndex = 151
-        Me.AnOut1Button.Text = "Analog Output 1"
-        Me.AnOut1Button.UseVisualStyleBackColor = True
-        '
-        'Analog4Button
-        '
-        Me.Analog4Button.Location = New System.Drawing.Point(16, 445)
-        Me.Analog4Button.Name = "Analog4Button"
-        Me.Analog4Button.Size = New System.Drawing.Size(139, 47)
-        Me.Analog4Button.TabIndex = 150
-        Me.Analog4Button.Text = "Analog Input 4"
-        Me.Analog4Button.UseVisualStyleBackColor = True
-        '
-        'Analog3Button
-        '
-        Me.Analog3Button.Location = New System.Drawing.Point(16, 382)
-        Me.Analog3Button.Name = "Analog3Button"
-        Me.Analog3Button.Size = New System.Drawing.Size(139, 49)
-        Me.Analog3Button.TabIndex = 149
-        Me.Analog3Button.Text = "Analog Input 3"
-        Me.Analog3Button.UseVisualStyleBackColor = True
-        '
-        'Analog2Button
-        '
-        Me.Analog2Button.Location = New System.Drawing.Point(16, 327)
-        Me.Analog2Button.Name = "Analog2Button"
-        Me.Analog2Button.Size = New System.Drawing.Size(139, 47)
-        Me.Analog2Button.TabIndex = 148
-        Me.Analog2Button.Text = "Analog Input 2"
-        Me.Analog2Button.UseVisualStyleBackColor = True
-        '
-        'Analog1Button
-        '
-        Me.Analog1Button.Location = New System.Drawing.Point(16, 266)
-        Me.Analog1Button.Name = "Analog1Button"
-        Me.Analog1Button.Size = New System.Drawing.Size(139, 49)
-        Me.Analog1Button.TabIndex = 147
-        Me.Analog1Button.Text = "Analog Input 1"
-        Me.Analog1Button.UseVisualStyleBackColor = True
+        Me.RXLabel.AutoSize = True
+        Me.RXLabel.Location = New System.Drawing.Point(194, 139)
+        Me.RXLabel.Name = "RXLabel"
+        Me.RXLabel.Size = New System.Drawing.Size(18, 20)
+        Me.RXLabel.TabIndex = 175
+        Me.RXLabel.Text = "0"
         '
         'TXLabel
         '
@@ -474,32 +309,175 @@ Partial Class Form1
         Me.RXDecLabel.TabIndex = 166
         Me.RXDecLabel.Text = "0"
         '
-        'Clear5Button
+        'DOut8Button
         '
-        Me.Clear5Button.Location = New System.Drawing.Point(733, 186)
-        Me.Clear5Button.Name = "Clear5Button"
-        Me.Clear5Button.Size = New System.Drawing.Size(116, 62)
-        Me.Clear5Button.TabIndex = 177
-        Me.Clear5Button.Text = "Clear All "
-        Me.Clear5Button.UseVisualStyleBackColor = True
+        Me.DOut8Button.Location = New System.Drawing.Point(642, 437)
+        Me.DOut8Button.Name = "DOut8Button"
+        Me.DOut8Button.Size = New System.Drawing.Size(139, 49)
+        Me.DOut8Button.TabIndex = 165
+        Me.DOut8Button.Text = "Digital Output 8"
+        Me.DOut8Button.UseVisualStyleBackColor = True
         '
-        'Clear4Button
+        'DOut7Button
         '
-        Me.Clear4Button.Location = New System.Drawing.Point(198, 186)
-        Me.Clear4Button.Name = "Clear4Button"
-        Me.Clear4Button.Size = New System.Drawing.Size(116, 62)
-        Me.Clear4Button.TabIndex = 176
-        Me.Clear4Button.Text = "Clear RX "
-        Me.Clear4Button.UseVisualStyleBackColor = True
+        Me.DOut7Button.Location = New System.Drawing.Point(642, 382)
+        Me.DOut7Button.Name = "DOut7Button"
+        Me.DOut7Button.Size = New System.Drawing.Size(139, 49)
+        Me.DOut7Button.TabIndex = 164
+        Me.DOut7Button.Text = "Digital Output 7"
+        Me.DOut7Button.UseVisualStyleBackColor = True
         '
-        'RXLabel
+        'DOut6Button
         '
-        Me.RXLabel.AutoSize = True
-        Me.RXLabel.Location = New System.Drawing.Point(257, 140)
-        Me.RXLabel.Name = "RXLabel"
-        Me.RXLabel.Size = New System.Drawing.Size(18, 20)
-        Me.RXLabel.TabIndex = 175
-        Me.RXLabel.Text = "0"
+        Me.DOut6Button.Location = New System.Drawing.Point(642, 325)
+        Me.DOut6Button.Name = "DOut6Button"
+        Me.DOut6Button.Size = New System.Drawing.Size(139, 49)
+        Me.DOut6Button.TabIndex = 163
+        Me.DOut6Button.Text = "Digital Output 6"
+        Me.DOut6Button.UseVisualStyleBackColor = True
+        '
+        'DOut5Button
+        '
+        Me.DOut5Button.Location = New System.Drawing.Point(642, 266)
+        Me.DOut5Button.Name = "DOut5Button"
+        Me.DOut5Button.Size = New System.Drawing.Size(139, 49)
+        Me.DOut5Button.TabIndex = 162
+        Me.DOut5Button.Text = "Digital Output 5"
+        Me.DOut5Button.UseVisualStyleBackColor = True
+        '
+        'DOut4Button
+        '
+        Me.DOut4Button.Location = New System.Drawing.Point(487, 437)
+        Me.DOut4Button.Name = "DOut4Button"
+        Me.DOut4Button.Size = New System.Drawing.Size(139, 49)
+        Me.DOut4Button.TabIndex = 161
+        Me.DOut4Button.Text = "Digital Output 4"
+        Me.DOut4Button.UseVisualStyleBackColor = True
+        '
+        'DOut3Button
+        '
+        Me.DOut3Button.Location = New System.Drawing.Point(487, 382)
+        Me.DOut3Button.Name = "DOut3Button"
+        Me.DOut3Button.Size = New System.Drawing.Size(139, 49)
+        Me.DOut3Button.TabIndex = 160
+        Me.DOut3Button.Text = "Digital Output 3"
+        Me.DOut3Button.UseVisualStyleBackColor = True
+        '
+        'DOut2Button
+        '
+        Me.DOut2Button.Location = New System.Drawing.Point(487, 325)
+        Me.DOut2Button.Name = "DOut2Button"
+        Me.DOut2Button.Size = New System.Drawing.Size(139, 49)
+        Me.DOut2Button.TabIndex = 159
+        Me.DOut2Button.Text = "Digital Output 2"
+        Me.DOut2Button.UseVisualStyleBackColor = True
+        '
+        'DIn1Label
+        '
+        Me.DIn1Label.AutoSize = True
+        Me.DIn1Label.Location = New System.Drawing.Point(343, 391)
+        Me.DIn1Label.Name = "DIn1Label"
+        Me.DIn1Label.Size = New System.Drawing.Size(105, 20)
+        Me.DIn1Label.TabIndex = 158
+        Me.DIn1Label.Text = "Digital input 1"
+        '
+        'AnOut2Button
+        '
+        Me.AnOut2Button.Location = New System.Drawing.Point(175, 327)
+        Me.AnOut2Button.Name = "AnOut2Button"
+        Me.AnOut2Button.Size = New System.Drawing.Size(139, 49)
+        Me.AnOut2Button.TabIndex = 155
+        Me.AnOut2Button.Text = "Analog Output 2"
+        Me.AnOut2Button.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Black
+        Me.PictureBox1.Location = New System.Drawing.Point(347, 327)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 50)
+        Me.PictureBox1.TabIndex = 154
+        Me.PictureBox1.TabStop = False
+        '
+        'DOut1Button
+        '
+        Me.DOut1Button.Location = New System.Drawing.Point(487, 266)
+        Me.DOut1Button.Name = "DOut1Button"
+        Me.DOut1Button.Size = New System.Drawing.Size(139, 49)
+        Me.DOut1Button.TabIndex = 153
+        Me.DOut1Button.Text = "Digital Output 1"
+        Me.DOut1Button.UseVisualStyleBackColor = True
+        '
+        'DIn1Button
+        '
+        Me.DIn1Button.Location = New System.Drawing.Point(331, 266)
+        Me.DIn1Button.Name = "DIn1Button"
+        Me.DIn1Button.Size = New System.Drawing.Size(139, 49)
+        Me.DIn1Button.TabIndex = 152
+        Me.DIn1Button.Text = "Digital Inputs"
+        Me.DIn1Button.UseVisualStyleBackColor = True
+        '
+        'AnOut1Button
+        '
+        Me.AnOut1Button.Location = New System.Drawing.Point(175, 266)
+        Me.AnOut1Button.Name = "AnOut1Button"
+        Me.AnOut1Button.Size = New System.Drawing.Size(139, 49)
+        Me.AnOut1Button.TabIndex = 151
+        Me.AnOut1Button.Text = "Analog Output 1"
+        Me.AnOut1Button.UseVisualStyleBackColor = True
+        '
+        'Analog4Button
+        '
+        Me.Analog4Button.Location = New System.Drawing.Point(16, 445)
+        Me.Analog4Button.Name = "Analog4Button"
+        Me.Analog4Button.Size = New System.Drawing.Size(139, 47)
+        Me.Analog4Button.TabIndex = 150
+        Me.Analog4Button.Text = "Analog Input 4"
+        Me.Analog4Button.UseVisualStyleBackColor = True
+        '
+        'Analog3Button
+        '
+        Me.Analog3Button.Location = New System.Drawing.Point(16, 382)
+        Me.Analog3Button.Name = "Analog3Button"
+        Me.Analog3Button.Size = New System.Drawing.Size(139, 49)
+        Me.Analog3Button.TabIndex = 149
+        Me.Analog3Button.Text = "Analog Input 3"
+        Me.Analog3Button.UseVisualStyleBackColor = True
+        '
+        'Analog2Button
+        '
+        Me.Analog2Button.Location = New System.Drawing.Point(16, 327)
+        Me.Analog2Button.Name = "Analog2Button"
+        Me.Analog2Button.Size = New System.Drawing.Size(139, 47)
+        Me.Analog2Button.TabIndex = 148
+        Me.Analog2Button.Text = "Analog Input 2"
+        Me.Analog2Button.UseVisualStyleBackColor = True
+        '
+        'Analog1Button
+        '
+        Me.Analog1Button.Location = New System.Drawing.Point(16, 266)
+        Me.Analog1Button.Name = "Analog1Button"
+        Me.Analog1Button.Size = New System.Drawing.Size(139, 49)
+        Me.Analog1Button.TabIndex = 147
+        Me.Analog1Button.Text = "Analog Input 1"
+        Me.Analog1Button.UseVisualStyleBackColor = True
+        '
+        'QuitButton
+        '
+        Me.QuitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.QuitButton.Location = New System.Drawing.Point(918, 559)
+        Me.QuitButton.Name = "QuitButton"
+        Me.QuitButton.Size = New System.Drawing.Size(82, 76)
+        Me.QuitButton.TabIndex = 53
+        Me.QuitButton.Text = "Quit"
+        Me.QuitButton.UseVisualStyleBackColor = True
+        '
+        'SerialPort1
+        '
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
         '
         'Form1
         '
@@ -540,8 +518,6 @@ Partial Class Form1
     Friend WithEvents DOut3Button As Button
     Friend WithEvents DOut2Button As Button
     Friend WithEvents DIn1Label As Label
-    Friend WithEvents AnOut4Button As Button
-    Friend WithEvents AnOut3Button As Button
     Friend WithEvents AnOut2Button As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents DOut1Button As Button
