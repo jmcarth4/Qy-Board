@@ -12,6 +12,8 @@ Public Class Form1
     Dim receiveByte(18) As Byte        'Receive Data Bytes
     'Public dataOut As String
     Public TXdata(3) As Byte
+    Dim vOut As String
+    Dim dOut As String
     Dim Val, receiveCount, TransmitCount As Double
     Dim newData, readSize As Integer
     Dim dataIn1, dataIn2, dataIn3, dataIn4, dataIn5, dataIn6, dataIn7, dataIn8 As Integer
@@ -161,6 +163,8 @@ Public Class Form1
 
             RXLabel.Text = inPut1 & inPut2 & inPut2 & inPut3 & inPut4 & inPut5 & inPut6 & inPut7 & inPut8
 
+            'AnVoltage()
+
 
             'Only one if else works....????????
             If inPut1 = 254 Then
@@ -185,6 +189,9 @@ Public Class Form1
         TXdata(1) = 0
         TXdata(2) = 0
         SendData()
+        AnVoltage()
+        VA1Label.Text = vOut
+        DA1Label.Text = dOut
     End Sub
 
     Private Sub Analog2Button_Click(sender As Object, e As EventArgs) Handles Analog2Button.Click
@@ -192,6 +199,9 @@ Public Class Form1
         TXdata(1) = 0
         TXdata(2) = 0
         SendData()
+        AnVoltage()
+        VA2Label.Text = vOut
+        DA2Label.Text = dOut
     End Sub
 
 
@@ -201,6 +211,9 @@ Public Class Form1
         TXdata(1) = 0
         TXdata(2) = 0
         SendData()
+        AnVoltage()
+        VA3Label.Text = vOut
+        DA3Label.Text = dOut
     End Sub
 
     Private Sub Analog4Button_Click(sender As Object, e As EventArgs) Handles Analog4Button.Click
@@ -208,6 +221,9 @@ Public Class Form1
         TXdata(1) = 0
         TXdata(2) = 0
         SendData()
+        AnVoltage()
+        VA4Label.Text = vOut
+        DA4Label.Text = dOut
     End Sub
 
 
@@ -324,6 +340,68 @@ Public Class Form1
         SendData()
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim vPort As Double
+        Dim vOut As String
+        Dim n1 As Double
+        Dim n2 As Double
+        Dim n3 As Double
+        Dim n4 As Double
+        Dim n5 As Double
+        Dim n6 As Double
+        Dim n7 As Double
+        'FahrConversion()
+        'CelsiusConversion()
+
+        n1 = 1 * 4
+        n2 = 1 / 64 '4 / 64 'dataIn2 / 64
+        n3 = Fix(n1 + n2)
+        n4 = 3.3 / 1023
+
+
+        vPort = n4 * n3
+
+        vOut = Format(vPort, "n")
+        VAn1Label.Text = vOut
+
+        n5 = 128 / 4
+        n6 = 128 * 64
+        n7 = n5 + n6
+        dOut = Fix(n5 + n6)
+
+        Label3.Text = CStr(n7)
+        Label4.Text = CStr(n5 + n6)
+        Label1.Text = dOut
+    End Sub
+
+
+
+
+
+    'Sub converts user input into fahrenheit temperature
+    'Sub FahrConversion()
+
+    '    Dim tempInput As Double
+    '    Dim e As Double
+    '    Dim fahrOut As Double
+    '    tempInput = CDbl(TextBox1.Text)
+    '    e = 9 / 5
+    '    fahrOut = tempInput * e + 32
+    '    Label2.Text = e
+    '    An1DaInLabel.Text = CStr(fahrOut) & Chr(176) & Chr(70)
+    'End Sub
+
+    ''Sub converts user input into celsius temperature
+    'Sub CelsiusConversion()
+    '    Dim e As Double
+    '    Dim celiusOut As Double
+    '    e = 5 / 9
+    '    'celiusOut = (tempInput - 32) * e
+    '    Label1.Text = CStr(celiusOut) & Chr(176) & Chr(67)
+    'End Sub
+
+
+
     Function SendData() As Byte
         Timer1.Enabled = False
         If portState = True Then
@@ -337,17 +415,34 @@ Public Class Form1
         ' Return _Something?
     End Function
 
-    Function AnVoltage() As Integer
-        Dim vPort As Integer
-        Dim n1 As Integer
-        Dim n2 As Integer
+    'works to 3.39 and 1020
+    Sub AnVoltage()
+        Dim vPort As Double
+        'Dim vOut As String
+        Dim n1 As Double
+        Dim n2 As Double
+        Dim n3 As Double
+        Dim n4 As Double
+        Dim n5 As Double
+        Dim n6 As Double
+        Dim n7 As Double
+
 
         n1 = dataIn1 * 4
-        n2 = dataIn2 / 64
+        n2 = dataIn2 / 64 '4 / 64 'dataIn2 / 64
+        n3 = Fix(n1 + n2)
+        n4 = 3.3 / 1023
+        vPort = n4 * n3
+        vOut = Format(vPort, "n")
 
-        vPort = n1 + n2
+        n5 = dataIn1 * 4
+        n6 = dataIn2 / 64
+        n7 = n5 + n6
+        'dOut = Format(n7, "n")
+        dOut = Fix(n5 + n6)
+    End Sub
 
-    End Function
+
     Private Sub Clear1Button_Click(sender As Object, e As EventArgs) Handles Clear1Button.Click
         TXDataListBox.Items.Clear()
         TXLabel.Text = " "
