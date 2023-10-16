@@ -232,6 +232,60 @@ Public Class Form1
         Else
             DO8CheckBox.Checked = False
         End If
+
+        If dataIn1 = 254 Then
+            DI1CheckBox.Checked = True
+        Else
+            DI1CheckBox.Checked = False
+        End If
+
+        If dataIn1 = 253 Then
+            DI2CheckBox.Checked = True
+        Else
+            DI2CheckBox.Checked = False
+        End If
+
+
+        If dataIn1 = 251 Then
+            DI3CheckBox.Checked = True
+        Else
+            DI3CheckBox.Checked = False
+        End If
+
+
+        If dataIn1 = 247 Then
+            DI4CheckBox.Checked = True
+        Else
+            DI4CheckBox.Checked = False
+        End If
+
+
+        If dataIn1 = 239 Then
+            DI5CheckBox.Checked = True
+        Else
+            DI5CheckBox.Checked = False
+        End If
+
+
+        If dataIn1 = 223 Then
+            DI6CheckBox.Checked = True
+        Else
+            DI6CheckBox.Checked = False
+        End If
+
+
+        If dataIn1 = 191 Then
+            DI7CheckBox.Checked = True
+        Else
+            DI7CheckBox.Checked = False
+        End If
+
+
+        If dataIn1 = 127 Then
+            DI8CheckBox.Checked = True
+        Else
+            DI8CheckBox.Checked = False
+        End If
     End Sub
 
 
@@ -342,8 +396,6 @@ Public Class Form1
         'If TXdata(1) >= 1 Then
         '    x = 1
         '    DO1CheckBox.Checked = True
-
-
         'End If
 
     End Sub
