@@ -165,16 +165,98 @@ Public Class Form1
             'AnVoltage()
 
 
-            'Only one if else works....????????
-            If inPut1 = 254 Then
-                PictureBox1.BackColor = Color.FromArgb(255, 0, 255)
-            Else
-                PictureBox1.BackColor = Color.FromArgb(0, 0, 0)
-            End If
+            ''Only one if else works....????????
+            'If inPut1 = 254 Then
+            '    PictureBox1.BackColor = Color.FromArgb(255, 0, 255)
+            'Else
+            '    PictureBox1.BackColor = Color.FromArgb(0, 0, 0)
+            'End If
 
 
 
         End If
+
+        'Works once button pressed????? 
+        'for all do select case of lots of if thens????
+
+        If TXdata(0) = 81 Then
+            TXdata(1) = 0
+            TXdata(2) = 0
+            SendData()
+            AnVoltage()
+            VA1Label.Text = vOut
+            DA1Label.Text = dOut
+        End If
+
+
+        If TXdata(0) = 32 Then
+
+            If DO1CheckBox.Checked = True Then
+                TXdata(1) = 1
+                TXdata(2) = 0
+                'SendData()
+            Else
+                DO1CheckBox.Checked = False
+            End If
+
+            If DO2CheckBox.Checked = True Then
+                TXdata(1) = 2
+                TXdata(2) = 0
+                ' SendData()
+            Else
+                DO2CheckBox.Checked = False
+            End If
+
+            If DO3CheckBox.Checked = True Then
+                TXdata(1) = 4
+                TXdata(2) = 0
+                ' SendData()
+            Else
+                DO3CheckBox.Checked = False
+            End If
+
+            If DO4CheckBox.Checked = True Then
+                TXdata(1) = 8
+                TXdata(2) = 0
+                ' SendData()
+            Else
+                DO4CheckBox.Checked = False
+            End If
+
+            If DO5CheckBox.Checked = True Then
+                TXdata(1) = 16
+                TXdata(2) = 0
+                ' SendData()
+            Else
+                DO5CheckBox.Checked = False
+            End If
+
+            If DO6CheckBox.Checked = True Then
+                TXdata(1) = 32
+                TXdata(2) = 0
+                ' SendData()
+            Else
+                DO6CheckBox.Checked = False
+            End If
+
+            If DO7CheckBox.Checked = True Then
+                TXdata(1) = 64
+                TXdata(2) = 0
+                ' SendData()
+            Else
+                DO7CheckBox.Checked = False
+            End If
+
+            If DO8CheckBox.Checked = True Then
+                TXdata(1) = 128
+                TXdata(2) = 0
+                ' SendData()
+            Else
+                DO8CheckBox.Checked = False
+            End If
+            SendData()
+        End If
+
 
         'Display D Out in checkbox
         If TXdata(1) = 1 Then
@@ -233,59 +315,69 @@ Public Class Form1
             DO8CheckBox.Checked = False
         End If
 
-        If dataIn1 = 254 Then
-            DI1CheckBox.Checked = True
-        Else
-            DI1CheckBox.Checked = False
+
+        'data in check boxes
+
+        If TXdata(0) = 48 Then
+            TXdata(1) = 0
+            TXdata(2) = 0
+            SendData()
+
+            If dataIn1 = 254 Then
+                DI1CheckBox.Checked = True
+            Else
+                DI1CheckBox.Checked = False
+            End If
+
+            If dataIn1 = 253 Then
+                DI2CheckBox.Checked = True
+            Else
+                DI2CheckBox.Checked = False
+            End If
+
+
+            If dataIn1 = 251 Then
+                DI3CheckBox.Checked = True
+            Else
+                DI3CheckBox.Checked = False
+            End If
+
+
+            If dataIn1 = 247 Then
+                DI4CheckBox.Checked = True
+            Else
+                DI4CheckBox.Checked = False
+            End If
+
+
+            If dataIn1 = 239 Then
+                DI5CheckBox.Checked = True
+            Else
+                DI5CheckBox.Checked = False
+            End If
+
+
+            If dataIn1 = 223 Then
+                DI6CheckBox.Checked = True
+            Else
+                DI6CheckBox.Checked = False
+            End If
+
+
+            If dataIn1 = 191 Then
+                DI7CheckBox.Checked = True
+            Else
+                DI7CheckBox.Checked = False
+            End If
+
+
+            If dataIn1 = 127 Then
+                DI8CheckBox.Checked = True
+            Else
+                DI8CheckBox.Checked = False
+            End If
         End If
 
-        If dataIn1 = 253 Then
-            DI2CheckBox.Checked = True
-        Else
-            DI2CheckBox.Checked = False
-        End If
-
-
-        If dataIn1 = 251 Then
-            DI3CheckBox.Checked = True
-        Else
-            DI3CheckBox.Checked = False
-        End If
-
-
-        If dataIn1 = 247 Then
-            DI4CheckBox.Checked = True
-        Else
-            DI4CheckBox.Checked = False
-        End If
-
-
-        If dataIn1 = 239 Then
-            DI5CheckBox.Checked = True
-        Else
-            DI5CheckBox.Checked = False
-        End If
-
-
-        If dataIn1 = 223 Then
-            DI6CheckBox.Checked = True
-        Else
-            DI6CheckBox.Checked = False
-        End If
-
-
-        If dataIn1 = 191 Then
-            DI7CheckBox.Checked = True
-        Else
-            DI7CheckBox.Checked = False
-        End If
-
-
-        If dataIn1 = 127 Then
-            DI8CheckBox.Checked = True
-        Else
-            DI8CheckBox.Checked = False
-        End If
     End Sub
 
 
@@ -391,12 +483,7 @@ Public Class Form1
         TXdata(1) = 1
         TXdata(2) = 0
         SendData()
-        'DO1CheckBox.Checked = True
-        ' Dim x As Integer
-        'If TXdata(1) >= 1 Then
-        '    x = 1
-        '    DO1CheckBox.Checked = True
-        'End If
+
 
     End Sub
 
