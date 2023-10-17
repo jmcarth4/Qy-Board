@@ -17,7 +17,7 @@ Public Class Form1
     Dim Val, receiveCount, TransmitCount As Double
     Dim newData, readSize As Integer
     Dim dataIn1, dataIn2, dataIn3, dataIn4, dataIn5, dataIn6, dataIn7, dataIn8 As Integer
-
+    Public timercount As Integer
 
     'Closes Serial Ports when forms closes
     Private Sub Form1_UnLoad()
@@ -108,6 +108,49 @@ Public Class Form1
         PortDataListBox.Items.Add("Parity = " & SerialPort1.Parity)
 
 
+        'works so far
+        'inputs connected ;(  ---- fix analog math
+        If portState = True Then
+            DigitalIn()
+            AnalogIn()
+
+        Else portstate = False
+            'MsgBox("Please configure and open serial port to procede")
+        End If
+
+
+
+
+        ' WORK!!!!!!!!!!
+        'Put in sub
+        'TODO add all
+
+        If DO1CheckBox.Checked = True Then
+            TXdata(0) = 32
+            TXdata(1) = 1
+            TXdata(2) = 0
+            SendData()
+        Else
+            DO1CheckBox.Checked = False
+        End If
+
+
+        If DO2CheckBox.Checked = True Then
+            TXdata(0) = 32
+            TXdata(1) = 2
+            TXdata(2) = 0
+            SendData()
+        Else
+            DO1CheckBox.Checked = False
+        End If
+
+
+
+
+
+
+
+
 
         'updates output listbox
         Dim inPut1, inPut2, inPut3, inPut4, inPut5, inPut6, inPut7, inPut8 As Integer
@@ -162,15 +205,8 @@ Public Class Form1
 
             RXLabel.Text = inPut1 & inPut2 & inPut2 & inPut3 & inPut4 & inPut5 & inPut6 & inPut7 & inPut8
 
-            'AnVoltage()
 
 
-            ''Only one if else works....????????
-            'If inPut1 = 254 Then
-            '    PictureBox1.BackColor = Color.FromArgb(255, 0, 255)
-            'Else
-            '    PictureBox1.BackColor = Color.FromArgb(0, 0, 0)
-            'End If
 
 
 
@@ -179,208 +215,276 @@ Public Class Form1
         'Works once button pressed????? 
         'for all do select case of lots of if thens????
 
-        If TXdata(0) = 81 Then
-            TXdata(1) = 0
-            TXdata(2) = 0
-            SendData()
-            AnVoltage()
-            VA1Label.Text = vOut
-            DA1Label.Text = dOut
-        End If
 
 
-        If TXdata(0) = 32 Then
+        'If TXdata(0) = 32 Then
 
-            If DO1CheckBox.Checked = True Then
-                TXdata(1) = 1
-                TXdata(2) = 0
-                'SendData()
-            Else
-                DO1CheckBox.Checked = False
-            End If
+        '    If DO1CheckBox.Checked = True Then
+        '        TXdata(1) = 1
+        '        TXdata(2) = 0
+        '        'SendData()
+        '    Else
+        '        DO1CheckBox.Checked = False
+        '    End If
 
-            If DO2CheckBox.Checked = True Then
-                TXdata(1) = 2
-                TXdata(2) = 0
-                ' SendData()
-            Else
-                DO2CheckBox.Checked = False
-            End If
+        '    If DO2CheckBox.Checked = True Then
+        '        TXdata(1) = 2
+        '        TXdata(2) = 0
+        '        ' SendData()
+        '    Else
+        '        DO2CheckBox.Checked = False
+        '    End If
 
-            If DO3CheckBox.Checked = True Then
-                TXdata(1) = 4
-                TXdata(2) = 0
-                ' SendData()
-            Else
-                DO3CheckBox.Checked = False
-            End If
+        '    If DO3CheckBox.Checked = True Then
+        '        TXdata(1) = 4
+        '        TXdata(2) = 0
+        '        ' SendData()
+        '    Else
+        '        DO3CheckBox.Checked = False
+        '    End If
 
-            If DO4CheckBox.Checked = True Then
-                TXdata(1) = 8
-                TXdata(2) = 0
-                ' SendData()
-            Else
-                DO4CheckBox.Checked = False
-            End If
+        '    If DO4CheckBox.Checked = True Then
+        '        TXdata(1) = 8
+        '        TXdata(2) = 0
+        '        ' SendData()
+        '    Else
+        '        DO4CheckBox.Checked = False
+        '    End If
 
-            If DO5CheckBox.Checked = True Then
-                TXdata(1) = 16
-                TXdata(2) = 0
-                ' SendData()
-            Else
-                DO5CheckBox.Checked = False
-            End If
+        '    If DO5CheckBox.Checked = True Then
+        '        TXdata(1) = 16
+        '        TXdata(2) = 0
+        '        ' SendData()
+        '    Else
+        '        DO5CheckBox.Checked = False
+        '    End If
 
-            If DO6CheckBox.Checked = True Then
-                TXdata(1) = 32
-                TXdata(2) = 0
-                ' SendData()
-            Else
-                DO6CheckBox.Checked = False
-            End If
+        '    If DO6CheckBox.Checked = True Then
+        '        TXdata(1) = 32
+        '        TXdata(2) = 0
+        '        ' SendData()
+        '    Else
+        '        DO6CheckBox.Checked = False
+        '    End If
 
-            If DO7CheckBox.Checked = True Then
-                TXdata(1) = 64
-                TXdata(2) = 0
-                ' SendData()
-            Else
-                DO7CheckBox.Checked = False
-            End If
+        '    If DO7CheckBox.Checked = True Then
+        '        TXdata(1) = 64
+        '        TXdata(2) = 0
+        '        ' SendData()
+        '    Else
+        '        DO7CheckBox.Checked = False
+        '    End If
 
-            If DO8CheckBox.Checked = True Then
-                TXdata(1) = 128
-                TXdata(2) = 0
-                ' SendData()
-            Else
-                DO8CheckBox.Checked = False
-            End If
-            SendData()
-        End If
-
-
-        'Display D Out in checkbox
-        If TXdata(1) = 1 Then
-            ' x = 1
-            DO1CheckBox.Checked = True
-        Else
-            DO1CheckBox.Checked = False
-        End If
-
-        If TXdata(1) = 2 Then
-            ' x = 1
-            DO2CheckBox.Checked = True
-        Else
-            DO2CheckBox.Checked = False
-        End If
-
-        If TXdata(1) = 4 Then
-            ' x = 1
-            DO3CheckBox.Checked = True
-        Else
-            DO3CheckBox.Checked = False
-        End If
-
-        If TXdata(1) = 8 Then
-            ' x = 1
-            DO4CheckBox.Checked = True
-        Else
-            DO4CheckBox.Checked = False
-        End If
-
-        If TXdata(1) = 16 Then
-            ' x = 1
-            DO5CheckBox.Checked = True
-        Else
-            DO5CheckBox.Checked = False
-        End If
-
-        If TXdata(1) = 32 Then
-            ' x = 1
-            DO6CheckBox.Checked = True
-        Else
-            DO6CheckBox.Checked = False
-        End If
-
-        If TXdata(1) = 64 Then
-            ' x = 1
-            DO7CheckBox.Checked = True
-        Else
-            DO7CheckBox.Checked = False
-        End If
-
-        If TXdata(1) = 128 Then
-            ' x = 1
-            DO8CheckBox.Checked = True
-        Else
-            DO8CheckBox.Checked = False
-        End If
+        '    If DO8CheckBox.Checked = True Then
+        '        TXdata(1) = 128
+        '        TXdata(2) = 0
+        '        ' SendData()
+        '    Else
+        '        DO8CheckBox.Checked = False
+        '    End If
+        '    SendData()
+        'End If
 
 
-        'data in check boxes
+        ''Display D Out in checkbox
+        'If TXdata(1) = 1 Then
+        '    ' x = 1
+        '    DO1CheckBox.Checked = True
+        'Else
+        '    DO1CheckBox.Checked = False
+        'End If
 
-        If TXdata(0) = 48 Then
-            TXdata(1) = 0
-            TXdata(2) = 0
-            SendData()
+        'If TXdata(1) = 2 Then
+        '    ' x = 1
+        '    DO2CheckBox.Checked = True
+        'Else
+        '    DO2CheckBox.Checked = False
+        'End If
 
-            If dataIn1 = 254 Then
-                DI1CheckBox.Checked = True
-            Else
-                DI1CheckBox.Checked = False
-            End If
+        'If TXdata(1) = 4 Then
+        '    ' x = 1
+        '    DO3CheckBox.Checked = True
+        'Else
+        '    DO3CheckBox.Checked = False
+        'End If
 
-            If dataIn1 = 253 Then
-                DI2CheckBox.Checked = True
-            Else
-                DI2CheckBox.Checked = False
-            End If
+        'If TXdata(1) = 8 Then
+        '    ' x = 1
+        '    DO4CheckBox.Checked = True
+        'Else
+        '    DO4CheckBox.Checked = False
+        'End If
 
+        'If TXdata(1) = 16 Then
+        '    ' x = 1
+        '    DO5CheckBox.Checked = True
+        'Else
+        '    DO5CheckBox.Checked = False
+        'End If
 
-            If dataIn1 = 251 Then
-                DI3CheckBox.Checked = True
-            Else
-                DI3CheckBox.Checked = False
-            End If
+        'If TXdata(1) = 32 Then
+        '    ' x = 1
+        '    DO6CheckBox.Checked = True
+        'Else
+        '    DO6CheckBox.Checked = False
+        'End If
 
+        'If TXdata(1) = 64 Then
+        '    ' x = 1
+        '    DO7CheckBox.Checked = True
+        'Else
+        '    DO7CheckBox.Checked = False
+        'End If
 
-            If dataIn1 = 247 Then
-                DI4CheckBox.Checked = True
-            Else
-                DI4CheckBox.Checked = False
-            End If
-
-
-            If dataIn1 = 239 Then
-                DI5CheckBox.Checked = True
-            Else
-                DI5CheckBox.Checked = False
-            End If
-
-
-            If dataIn1 = 223 Then
-                DI6CheckBox.Checked = True
-            Else
-                DI6CheckBox.Checked = False
-            End If
-
-
-            If dataIn1 = 191 Then
-                DI7CheckBox.Checked = True
-            Else
-                DI7CheckBox.Checked = False
-            End If
+        'If TXdata(1) = 128 Then
+        '    ' x = 1
+        '    DO8CheckBox.Checked = True
+        'Else
+        '    DO8CheckBox.Checked = False
+        'End If
 
 
-            If dataIn1 = 127 Then
-                DI8CheckBox.Checked = True
-            Else
-                DI8CheckBox.Checked = False
-            End If
-        End If
+        ''data in check boxes
 
+        'If TXdata(0) = 48 Then
+        '    TXdata(1) = 0
+        '    TXdata(2) = 0
+        '    SendData()
+
+        '    If dataIn1 = 254 Then
+        '        DI1CheckBox.Checked = True
+        '    Else
+        '        DI1CheckBox.Checked = False
+        '    End If
+
+        '    If dataIn1 = 253 Then
+        '        DI2CheckBox.Checked = True
+        '    Else
+        '        DI2CheckBox.Checked = False
+        '    End If
+
+
+        '    If dataIn1 = 251 Then
+        '        DI3CheckBox.Checked = True
+        '    Else
+        '        DI3CheckBox.Checked = False
+        '    End If
+
+
+        '    If dataIn1 = 247 Then
+        '        DI4CheckBox.Checked = True
+        '    Else
+        '        DI4CheckBox.Checked = False
+        '    End If
+
+
+        '    If dataIn1 = 239 Then
+        '        DI5CheckBox.Checked = True
+        '    Else
+        '        DI5CheckBox.Checked = False
+        '    End If
+
+
+        '    If dataIn1 = 223 Then
+        '        DI6CheckBox.Checked = True
+        '    Else
+        '        DI6CheckBox.Checked = False
+        '    End If
+
+
+        '    If dataIn1 = 191 Then
+        '        DI7CheckBox.Checked = True
+        '    Else
+        '        DI7CheckBox.Checked = False
+        '    End If
+
+
+        '    If dataIn1 = 127 Then
+        '        DI8CheckBox.Checked = True
+        '    Else
+        '        DI8CheckBox.Checked = False
+        '    End If
+        'End If
     End Sub
 
+    Sub AnalogIn()
+        TXdata(0) = 81
+        TXdata(1) = 0
+        TXdata(2) = 0
+        SendData()
+        AnVoltage()
+        VA1Label.Text = vOut
+        DA1Label.Text = dOut
+    End Sub
+    'do stuff aslkfjalksjfalksjfalksjflk
+    'aslkfjalksjflkasf
+    Sub AnalogOut()
 
+    End Sub
+    Sub DigitalIn()
+        ' If portState = True Then
+        TXdata(0) = 48
+        TXdata(1) = 0
+            TXdata(2) = 0
+            SendData()
+
+
+
+
+        If dataIn1 = 254 Then
+            DI1CheckBox.Checked = True
+        Else
+            DI1CheckBox.Checked = False
+        End If
+
+        If dataIn1 = 253 Then
+            DI2CheckBox.Checked = True
+        Else
+            DI2CheckBox.Checked = False
+        End If
+
+
+        If dataIn1 = 251 Then
+            DI3CheckBox.Checked = True
+        Else
+            DI3CheckBox.Checked = False
+        End If
+
+
+        If dataIn1 = 247 Then
+            DI4CheckBox.Checked = True
+        Else
+            DI4CheckBox.Checked = False
+        End If
+
+
+        If dataIn1 = 239 Then
+            DI5CheckBox.Checked = True
+        Else
+            DI5CheckBox.Checked = False
+        End If
+
+
+        If dataIn1 = 223 Then
+            DI6CheckBox.Checked = True
+        Else
+            DI6CheckBox.Checked = False
+        End If
+
+
+        If dataIn1 = 191 Then
+            DI7CheckBox.Checked = True
+        Else
+            DI7CheckBox.Checked = False
+        End If
+
+
+        If dataIn1 = 127 Then
+            DI8CheckBox.Checked = True
+        Else
+            DI8CheckBox.Checked = False
+        End If
+    End Sub
 
     Private Sub Analog1Button_Click(sender As Object, e As EventArgs) Handles Analog1Button.Click
         TXdata(0) = 81
@@ -426,46 +530,50 @@ Public Class Form1
 
 
 
-    'not work with bytes
-    Private Sub AnOut1Button_Click(sender As Object, e As EventArgs) Handles AnOut1Button.Click
-        'TXdata(0) = 65
-        'TXdata(1) = 0
-        'TXdata(2) = 0
-        'SendData()
-        Timer1.Enabled = False                                  'Stop Timer
-        Dim dataOut As String
-        dataOut = "A"
-        If portState = True Then
-            If portState = True Then
-                SerialPort1.Write(dataOut, 0, 1)
-                TXDataListBox.Items.Add(dataOut)
-                TXLabel.Text = dataOut
-            Else
-                MsgBox("Please configure and open serial port to procede")
+    'set as digial output.  Needs to be adjustable from 0 t0 1024 (2 bits) to send 0 to 3.3 V outs 
+    'same calcs as before?????????
 
-            End If
-        End If
-        Timer1.Enabled = True
+
+
+    Private Sub AnOut1Button_Click(sender As Object, e As EventArgs) Handles AnOut1Button.Click
+        TXdata(0) = 65
+        TXdata(1) = 255
+        TXdata(2) = 0
+        SendData()
+        'Timer1.Enabled = False                                  'Stop Timer
+        'Dim dataOut As String
+        'dataOut = "A"
+        'If portState = True Then
+        '    If portState = True Then
+        '        SerialPort1.Write(dataOut, 0, 1)
+        '        TXDataListBox.Items.Add(dataOut)
+        '        TXLabel.Text = dataOut
+        '    Else
+        '        MsgBox("Please configure and open serial port to procede")
+
+        '    End If
+        'End If
+        'Timer1.Enabled = True
     End Sub
     Private Sub AnOut2Button_Click(sender As Object, e As EventArgs) Handles AnOut2Button.Click
-        'TXdata(0) = 66
-        'TXdata(1) = 0
-        'TXdata(2) = 0
-        'SendData()
-        Timer1.Enabled = False                                  'Stop Time
-        Dim dataOut As String
-        dataOut = "B"
-        If portState = True Then
-            If portState = True Then
-                SerialPort1.Write(dataOut, 0, 1)
-                TXDataListBox.Items.Add(dataOut)
-                TXLabel.Text = dataOut
-            Else
-                MsgBox("Please configure and open serial port to procede")
+        TXdata(0) = 66
+        TXdata(1) = 255
+        TXdata(2) = 0
+        SendData()
+        'Timer1.Enabled = False                                  'Stop Time
+        'Dim dataOut As String
+        'dataOut = "B"
+        'If portState = True Then
+        '    If portState = True Then
+        '        SerialPort1.Write(dataOut, 0, 1)
+        '        TXDataListBox.Items.Add(dataOut)
+        '        TXLabel.Text = dataOut
+        '    Else
+        '        MsgBox("Please configure and open serial port to procede")
 
-            End If
-        End If
-        Timer1.Enabled = True
+        '    End If
+        'End If
+        'Timer1.Enabled = True
     End Sub
 
 
@@ -577,31 +685,6 @@ Public Class Form1
 
 
 
-
-    'Sub converts user input into fahrenheit temperature
-    'Sub FahrConversion()
-
-    '    Dim tempInput As Double
-    '    Dim e As Double
-    '    Dim fahrOut As Double
-    '    tempInput = CDbl(TextBox1.Text)
-    '    e = 9 / 5
-    '    fahrOut = tempInput * e + 32
-    '    Label2.Text = e
-    '    An1DaInLabel.Text = CStr(fahrOut) & Chr(176) & Chr(70)
-    'End Sub
-
-    ''Sub converts user input into celsius temperature
-    'Sub CelsiusConversion()
-    '    Dim e As Double
-    '    Dim celiusOut As Double
-    '    e = 5 / 9
-    '    'celiusOut = (tempInput - 32) * e
-    '    Label1.Text = CStr(celiusOut) & Chr(176) & Chr(67)
-    'End Sub
-
-
-
     Function SendData() As Byte
         Timer1.Enabled = False
         If portState = True Then
@@ -612,13 +695,17 @@ Public Class Form1
             MsgBox("Please configure and open serial port to procede")
         End If
         Timer1.Enabled = True
+
         ' Return _Something?
     End Function
 
+
+
+    'need variable only call when doing anlog ...so not get used when messing with analog
     'works to 3.39 and 1020
     Sub AnVoltage()
         Dim vPort As Double
-        'Dim vOut As String
+
         Dim n1 As Double
         Dim n2 As Double
         Dim n3 As Double
